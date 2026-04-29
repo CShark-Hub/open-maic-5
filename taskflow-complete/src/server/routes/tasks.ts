@@ -125,7 +125,7 @@ router.get("/:id", (req: Request, res: Response) => {
 router.post("/", authenticateToken, (req: Request, res: Response) => {
   const result = createTaskSchema.safeParse(req.body);
   if (!result.success) {
-    const messages = result.error.errors.map((e) => e.message).join(", ");
+    const messages = result.error.issues.map((e) => e.message).join(", ");
     return res.status(400).json({ error: messages });
   }
 
@@ -138,7 +138,7 @@ router.post("/", authenticateToken, (req: Request, res: Response) => {
 router.put("/:id", authenticateToken, (req: Request, res: Response) => {
   const result = updateTaskSchema.safeParse(req.body);
   if (!result.success) {
-    const messages = result.error.errors.map((e) => e.message).join(", ");
+    const messages = result.error.issues.map((e) => e.message).join(", ");
     return res.status(400).json({ error: messages });
   }
 

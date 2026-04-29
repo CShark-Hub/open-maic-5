@@ -64,6 +64,10 @@ npm run dev:client
 # Then follow taskflow-starter/README.md to build your CLAUDE.md and a subagent
 ```
 
+## Step-by-step Walkthrough
+
+For a self-guided run with concrete prompts for each architecture, see [**`WALKTHROUGH.md`**](WALKTHROUGH.md). About 60–90 min end-to-end.
+
 ## How the Original Session Was Structured
 
 Reuse the shape if you want to run a session of your own.
