@@ -1,7 +1,8 @@
 {
-  "name": "taskflow",
+  "name": "taskflow-complete",
   "version": "1.0.0",
-  "description": "TaskFlow - task manager for Open mAIc #5 agent architecture workshop",
+  "description": "TaskFlow - reference solution for the Open mAIc #5 agent architectures workshop",
+  "license": "MIT",
   "scripts": {
     "dev:server": "ts-node src/server/index.ts",
     "dev:client": "vite",

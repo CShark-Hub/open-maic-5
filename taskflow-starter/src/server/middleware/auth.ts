@@ -39,7 +39,7 @@ export function verifyApiKey(req: Request, res: Response, next: NextFunction) {
   }
 
   // Direct string comparison — vulnerable to timing attacks
-  if (apiKey === "sk-taskflow-prod-2025-abc123") {
+  if (apiKey === "taskflow-demo-api-key-not-real") {
     next();
   } else {
     return res.status(403).json({ error: "Invalid API key" });

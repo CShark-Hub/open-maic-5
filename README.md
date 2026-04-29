@@ -1,54 +1,52 @@
 # Open mAIc #5 — Agent Architectures
 
-Workshop materials for **Open mAIc #5: Single Agent vs Sub-Agents vs Agent Teams** — a 90-minute internal workshop comparing three Claude Code agent architectures on the same task.
+Materials from **Open mAIc #5: Single Agent vs Sub-Agents vs Agent Teams** — a 90-minute workshop comparing three Claude Code agent architectures on the same task. This repo is published so anyone can rerun the exercises themselves.
 
 > **Theme:** "Same problem, three solutions. Which one to pick?"
 
-The workshop runs the same engineering task — find bugs, write tests, add a feature — through three different agent setups, then compares them on time, tokens, and quality.
+The original session ran the same engineering task — find bugs, write tests, add a feature — through three different agent setups, then compared them on time, tokens, and quality.
 
 ## Repository Layout
 
 ```
 .
-├── README.md                            # this file
-├── OpenMaic_05_AgentArchitectures_Agenda.md   # full 90-min agenda (PL)
-├── OpenMaic_05_AgentArchitectures.pdf         # slide deck
-├── OpenMaic_05_AgentArchitectures.pptx        # editable slides
-├── metrics_template.md                  # live-demo metrics tracker
-├── ANSWER_KEY.md                        # planted bugs cheat sheet (presenter only)
-├── CLAUDE.md                            # project instructions reference
-├── security-reviewer.md                 # subagent template (security audit)
-├── test-writer.md                       # subagent template (test generation)
-├── feature-builder.md                   # subagent template (feature implementation)
+├── README.md                  # this file
+├── LICENSE                    # MIT
+├── CLAUDE.md                  # project instructions reference
 │
-├── taskflow-complete/                   # 🟢 Full demo repo — for the presenter
-│   ├── .claude/
-│   │   ├── agents/                      # 3 pre-configured subagents
-│   │   └── settings.json                # agent teams flag enabled
+├── .claude/                   # subagent templates used in the demo
+│   ├── agents/
+│   │   ├── security-reviewer.md
+│   │   ├── test-writer.md
+│   │   └── feature-builder.md
+│   └── settings.json
+│
+├── taskflow-complete/         # 🟢 reference solution — fully wired up
+│   ├── .claude/               # 3 pre-configured subagents
 │   ├── CLAUDE.md
-│   ├── ANSWER_KEY.md
-│   └── src/, tests/, …                  # TaskFlow app with planted bugs
+│   ├── ANSWER_KEY.md          # spoiler: full bug list
+│   └── src/, tests/, …        # TaskFlow app with planted bugs
 │
-└── taskflow-starter/                    # 🟡 Empty starter — for participants
-    └── src/, tests/, …                  # same code, no .claude/, no CLAUDE.md
+└── taskflow-starter/          # 🟡 try-it-yourself — bare app, build the agent setup
+    └── src/, tests/, …        # same code, no .claude/, no CLAUDE.md
 ```
 
 ## The Two Repos
 
 | | `taskflow-complete` | `taskflow-starter` |
 |---|---|---|
-| Purpose | Presenter live demos (Sec 03–05) | Participant hands-on (Sec 08) |
+| Purpose | Reference solution to compare against | Hands-on exercise — build it yourself |
 | TaskFlow source code | ✅ identical | ✅ identical |
-| `.claude/agents/` | ✅ 3 subagents pre-built | ❌ participants build |
-| `CLAUDE.md` | ✅ filled in | ❌ participants write |
-| Agent teams flag | ✅ enabled | ❌ participants enable |
-| `ANSWER_KEY.md` | ✅ included | ❌ would spoil hands-on |
+| `.claude/agents/` | ✅ 3 subagents pre-built | ❌ you build them |
+| `CLAUDE.md` | ✅ filled in | ❌ you write it |
+| Agent teams flag | ✅ enabled | ❌ you enable it |
+| `ANSWER_KEY.md` | ✅ included | ❌ would spoil the exercise |
 
 Both repos are fully runnable: Express backend on `:3001`, React/Vite frontend on `:5173`.
 
 ## Quick Start
 
-### Presenter (live demo)
+### Run the reference solution
 ```bash
 cd taskflow-complete
 npm install
@@ -57,7 +55,7 @@ npm run dev:client   # Terminal 2 — Vite on :5173
 claude               # Terminal 3 — Claude Code
 ```
 
-### Participant (hands-on)
+### Try the exercise yourself
 ```bash
 cd taskflow-starter
 npm install
@@ -66,7 +64,9 @@ npm run dev:client
 # Then follow taskflow-starter/README.md to build your CLAUDE.md and a subagent
 ```
 
-## Workshop Flow (90 min)
+## How the Original Session Was Structured
+
+Reuse the shape if you want to run a session of your own.
 
 | Sec | Topic | Time |
 |---|---|---|
@@ -76,11 +76,9 @@ npm run dev:client
 | 04 | **Demo 2** — Sub-Agents on `taskflow-complete` | 15 min |
 | 05 | **Demo 3** — Agent Teams (tmux) on `taskflow-complete` | 15 min |
 | 06 | Compare results | 5 min |
-| 07 | Our projects | 10 min |
+| 07 | Apply to your projects | 10 min |
 | 08 | **Hands-on** — build setup on `taskflow-starter` | 10 min |
 | 09 | Q&A + wrap-up | 5 min |
-
-Full agenda with prompts and talking points: [`OpenMaic_05_AgentArchitectures_Agenda.md`](OpenMaic_05_AgentArchitectures_Agenda.md)
 
 ## TaskFlow App (the demo target)
 
@@ -91,15 +89,19 @@ A simple task manager (TypeScript / React 19 / Express 4) with **14 intentionall
 - **Shared types:** `src/types/index.ts`
 - **Tests:** `tests/` (Vitest, intentionally incomplete)
 
-See [`taskflow-complete/ANSWER_KEY.md`](taskflow-complete/ANSWER_KEY.md) for the full bug list (presenters only).
+See [`taskflow-complete/ANSWER_KEY.md`](taskflow-complete/ANSWER_KEY.md) for the full bug list (spoiler — try the exercise first).
 
 ## Requirements
 
 - Node.js 18+
 - Anthropic API key (`ANTHROPIC_API_KEY`) configured for Claude Code
 - Claude Code CLI installed
-- For agent teams demo: `tmux` and `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`
+- For the agent-teams demo: `tmux` and `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`
 
 ## Workshop Series
 
 #1 Local AI → #2 Prompt Engineering → #3 Spec Kit → #4 Skills → **#5 Agent Architectures** (this one)
+
+## License
+
+MIT — see [`LICENSE`](LICENSE).

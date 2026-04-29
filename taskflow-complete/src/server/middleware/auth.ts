@@ -6,7 +6,7 @@ import { AuthUser } from "../../types";
 // Fix #1: Secret loaded from env — never hardcoded in source.
 // Fix #10: API key also from env with timing-safe comparison.
 const EXPECTED_API_KEY =
-  process.env.API_KEY ?? "sk-taskflow-prod-2025-abc123";
+  process.env.API_KEY ?? "taskflow-demo-api-key-not-real";
 
 /**
  * Reads JWT_SECRET from env at call time.

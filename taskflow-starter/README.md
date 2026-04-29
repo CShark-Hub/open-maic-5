@@ -1,6 +1,8 @@
-# TaskFlow — Starter Repo for Open mAIc #5
+# TaskFlow — Starter Repo (Open mAIc #5)
 
-This is the **starter version** of the TaskFlow demo — same code, but without AI agent configuration. Your job: add it yourself.
+This is the **try-it-yourself** version of the TaskFlow demo — same code as `taskflow-complete`, but without the Claude Code agent configuration. Your job: add it yourself.
+
+> Originally the hands-on portion of the Open mAIc #5 workshop. Now public so anyone can rerun the exercise.
 
 ## Quick Start
 
@@ -13,7 +15,7 @@ npm run dev:server                # Backend on :3001
 npm run dev:client                # Frontend on :5173 (in a second terminal)
 ```
 
-## Your Tasks (Hands-on)
+## Your Tasks
 
 ### Step 1: Write CLAUDE.md (2 min)
 

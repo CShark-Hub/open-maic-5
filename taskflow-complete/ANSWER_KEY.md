@@ -1,4 +1,6 @@
-# TaskFlow — Answer Key (TYLKO DLA PROWADZACEGO)
+# TaskFlow — Answer Key (Spoiler: full bug list)
+
+> Originally distributed only to the workshop presenter. Now public — read this *after* you've tried finding the bugs yourself, or use it as a checklist.
 
 ## Planted Bugs Summary: 12 issues across 5 files
 
@@ -19,7 +21,7 @@
    - Fix: add `exp` claim and validate it
 
 4. **MEDIUM** — API key comparison vulnerable to timing attack (line 33)
-   - `apiKey === "sk-taskflow-prod-2025-abc123"`
+   - `apiKey === "taskflow-demo-api-key-not-real"`
    - Fix: use `crypto.timingSafeEqual()`
 
 ---

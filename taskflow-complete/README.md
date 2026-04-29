@@ -1,6 +1,8 @@
-# TaskFlow — Demo Repo for Open mAIc #5
+# TaskFlow — Reference Solution (Open mAIc #5)
 
-Demo codebase for comparing Claude Code agent architectures: Single Agent vs Sub-Agents vs Agent Teams.
+Reference codebase for comparing Claude Code agent architectures: Single Agent vs Sub-Agents vs Agent Teams. This is the fully-configured version — for the hands-on starter, see [`../taskflow-starter`](../taskflow-starter).
+
+> Originally the demo target for Open mAIc #5. Now public so anyone can compare against this setup or rerun the exercises.
 
 ## Quick Start
 
@@ -33,21 +35,21 @@ A simple task management app (TypeScript/React/Express) with **intentional issue
 CLAUDE.md                  — Project context for Claude Code
 ```
 
-## Workshop Usage
+## Three Architectures to Try
 
-### Demo 1: Single Agent
+### Architecture 1: Single Agent
 ```bash
 claude
 > Review this repo, find bugs, write tests, add task filtering.
 ```
 
-### Demo 2: Sub-Agents
+### Architecture 2: Sub-Agents
 ```bash
 claude
 > Use security-reviewer to audit src/, test-writer to add tests, and feature-builder to implement filtering.
 ```
 
-### Demo 3: Agent Teams
+### Architecture 3: Agent Teams
 ```bash
 claude
 > Create an agent team: security-auditor, test-writer, feature-developer. Security shares findings with feature-developer.
