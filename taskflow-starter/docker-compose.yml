@@ -1,0 +1,21 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    container_name: taskflow-starter-server
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    ports:
+      - "3001:3001"
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: taskflow-starter-client
+    depends_on:
+      - server
+    ports:
+      - "8080:80"
