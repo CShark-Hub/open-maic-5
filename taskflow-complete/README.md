@@ -57,4 +57,4 @@ claude
 
 ## Intentional Bugs (Answer Key)
 
-See `ANSWER_KEY.md` for the full list of planted issues.
+See [`ANSWER_KEY.md`](./ANSWER_KEY.md) for the full list of 14 planted issues across 5 files.

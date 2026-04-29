@@ -2,7 +2,7 @@
 
 > Originally distributed only to the workshop presenter. Now public — read this *after* you've tried finding the bugs yourself, or use it as a checklist.
 
-## Planted Bugs Summary: 12 issues across 5 files
+## Planted Bugs Summary: 14 issues across 5 files
 
 ---
 
